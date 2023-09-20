@@ -17,7 +17,7 @@ int sh_active(dell_t *dell)
  * @stri_delim: the delimeter of string
  * Return: if true return 1, if false 0
  */
-it sh_stri_deli(char ca, char *stri_delim)
+int sh_stri_deli(char ca, char *stri_delim)
 {
 	while (*stri_delim)
 		if (*stri_delim++ == ca)

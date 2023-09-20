@@ -47,7 +47,7 @@ int _shcd(dell_t *dell)
 		dc = _shgetenv(dell, "HOME=");
 		if (!dc)
 			chdirect =
-				chdir((dc = _chgetenv(dell, "PWD=")) ? dc : "/");
+				chdir((dc = _shgetenv(dell, "PWD=")) ? dc : "/");
 		else
 			chdirect = chdir(dc);
 	}
@@ -60,7 +60,7 @@ int _shcd(dell_t *dell)
 			return (1);
 		}
 		_shputs(_shgetenv(dell, "OLDPWD=")), _shputchar('\n');
-		chdirect = chdir((dir = _shgetenv(dell, "OLDPWD=")) ? dir : "/");
+		chdirect = chdir((dc = _shgetenv(dell, "OLDPWD=")) ? dc : "/");
 	}
 	else
 		chdirect = chdir(dell->str_argh[1]);
@@ -72,7 +72,7 @@ int _shcd(dell_t *dell)
 	else
 	{
 		_shsetenv(dell, "OLDPWD", _shgetenv(dell, "PWD="));
-		_shsetenv(dell, "PWD", getswd(buffer, 1024))
+		_shsetenv(dell, "PWD", getcwd(buffer, 1024));
 	}
 	return (0);
 }

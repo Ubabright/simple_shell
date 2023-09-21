@@ -17,9 +17,11 @@ char **shstritow(char *stri, char *del_stri)
 	if (!del_stri)
 		del_stri = "";
 	for (z = 0; stri[z] != '\0'; z++)
+	{
 		if (!sh_stri_deli(stri[z], del_stri) && (sh_stri_deli(stri[z + 1],
 			del_stri) || !stri[z + 1]))
 			wrdsn++;
+	}
 		if (wrdsn == 0)
 			return (NULL);
 		d = malloc((1 + wrdsn) * sizeof(char *));

@@ -95,8 +95,10 @@ void fd_loc_cmd(dell_t *dell)
 		dell->lines_flagged = 0;
 	}
 	for (z = 0, e = 0; dell->arg_gt[z]; z++)
+	{
 		if (!sh_stri_deli(dell->arg_gt[z], " \t\n"))
 			e++;
+	}
 		if (!e)
 			return;
 		pre_path = loc_pre_path(dell, _shgetenv(dell, "PATH="), dell->str_argh[0]);

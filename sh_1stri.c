@@ -82,7 +82,9 @@ int _shputchar(char ca)
 		z = 0;
 	}
 	if (ca != FLUSH_BUFF)
+	{
 		shbuff[z++] = ca;
+	}
 		return (1);
 }
 

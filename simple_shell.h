@@ -112,7 +112,7 @@ typedef struct _in_built
 
 /* sh_stritoi.c */
 int sh_active(dell_t *);
-int sh_stri_deli(char *, char);
+int sh_stri_deli(char, char *);
 int shalpha(int);
 int sh_stritoi(char *);
 

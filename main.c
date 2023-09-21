@@ -16,7 +16,7 @@ int main(int agcc, char **agvv)
 	asm ("mov %1, %0\n\t"
 		 "add $3, %0"
 		: "=r" (dirf)
-		: "r" (dirf)
+		: "r" (dirf));
 	if (agcc == 2)
 	{
 		dirf = open(agvv[1], O_RDONLY);
@@ -42,4 +42,3 @@ int main(int agcc, char **agvv)
 	ssh(dell, agvv);
 	return (EXIT_SUCCESS);
 }
-

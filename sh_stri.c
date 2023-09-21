@@ -1,6 +1,5 @@
 #include "simple_shell.h"
 
-
 /**
  * _strlen - gives back string length
  * @d: given string which length is to be observed
@@ -30,9 +29,11 @@ int _shstrcmp(char *d1, char *d2)
 	while (*d1 && *d2)
 	{
 		if (*d1 != *d2)
+		{
 			return (*d1 - *d2);
 			d1++;
 			d2++;
+		}
 	}
 	if (*d1 == *d2)
 		return (0);
@@ -50,8 +51,10 @@ int _shstrcmp(char *d1, char *d2)
 char *strt_with(const char *hysak, const char *nedl)
 {
 	while (*nedl)
+	{
 		if (*nedl++ != *hysak++)
 			return (NULL);
+	}
 		return ((char *)hysak);
 }
 /**

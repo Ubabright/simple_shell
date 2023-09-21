@@ -33,9 +33,11 @@ char *replica(char *pre_pathstri, int strndx, int spndx)
 	int z = 0, e = 0;
 
 	for (e = 0, z = strndx; z < spndx; z++)
+	{
 		if (pre_pathstri[z] != ':')
 			shbuff[e++] = pre_pathstri[z];
 		shbuff[e] = 0;
+	}
 		return (shbuff);
 }
 

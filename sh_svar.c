@@ -4,7 +4,7 @@
  * sh_is_chn - checks if present char in buffer is link delimeter
  * @dell: the framework structure
  * @shbuff: the buffer of the character
- * @u: is where current position in shbuff is located
+ * @u: is where currents position in shbuff is located
  *
  * Return:  if linked delimeter reeturn 1, else 0
  */
